@@ -1,0 +1,15 @@
+dist
+state/
+node_modules/
+.env
+trees/
+development/
+**/*.out
+
+.data/
+.data/**/*.sqlite
+*.sqlite
+
+TODO.md
+
+logs/

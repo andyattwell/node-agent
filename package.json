@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-adw",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "npm run build && node dist/main.js",
+    "dev:watch": "npm run build && concurrently -k -n tsc,node \"tsc -w --preserveWatchOutput\" \"node --watch dist/main.js\"",
+    "test": "vitest run",
+    "test2": "npm run build && node dist/test.js",
+    "chat": "node dist/chat.js",
+    "prechat": "npm run build",
+    "cron-issues": "npm run build && node dist/scripts/cron-issues.js",
+    "list-gemini-models": "tsx utils/gemini.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.6.0",
+    "dotenv": "^17.3.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.28"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^20.19.37",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  }
+}
